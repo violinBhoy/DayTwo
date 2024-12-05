@@ -63,12 +63,21 @@ public class Two {//what if you remove the second value being checked
     }
 
     public static boolean removing(ArrayList<Integer> list, int index) {
+        // for (int i = 0; i < list.size(); i++) {
+        //     int removed = list.remove(i);
+        //     System.out.println(list);
+        //     if (testLogic(list, false)) {
+        //         return true;
+        //     }
+        //     list.add(i, removed);
+        // }
+        // return false;
         for (int i = 0; i < list.size(); i++) {
-            int removed = list.remove(i);
-            if (testLogic(list, false)) {
+            ArrayList<Integer> modifiedReport = new ArrayList<>(list);
+            modifiedReport.remove(i);
+            if (testLogic(modifiedReport, false)) {
                 return true;
             }
-            list.add(i, removed);
         }
         return false;
     }
